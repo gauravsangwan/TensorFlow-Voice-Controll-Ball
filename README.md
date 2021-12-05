@@ -1,4 +1,4 @@
-- Draw Ball
+- Draw Ball - Done
 - Setup Canvas
 - Create Canvas ref and x,y,r
 - Update Ball state

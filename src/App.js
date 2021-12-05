@@ -7,7 +7,8 @@ import * as tf from '@tensorflow/tfjs';
 import * as speech from '@tensorflow-models/speech-commands';
 
 
-
+// draw Ball
+import {drawBall} from "./utilities.js";
 
 
 
@@ -53,7 +54,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1> Speech To Text Converstion using tensorflowJS | Gaurav Sangwan</h1>
+        <h1> Voice-Control-Move-Ball | Gaurav Sangwan</h1>
         <p>This ReactJS application can convert following sounds to text , zero to nine and go,stop,up,down,left,right,yes,no and two more possibilities of Unknown noises and background noise.   </p>
 
 
