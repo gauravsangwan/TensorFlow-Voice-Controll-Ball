@@ -1,7 +1,7 @@
 - Draw Ball - Done
 - Setup Canvas - Done
 - Create Canvas ref and x,y,r -Done
-- Update Ball state
+- Update Ball state - Done
 
 
 # Model Can recognize these commands

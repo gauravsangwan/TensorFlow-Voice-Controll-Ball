@@ -1,5 +1,5 @@
 import React,{useEffect, useState,useRef} from "react"; 
-import logo from './logo.svg';
+
 import './App.css';
 
 //>Import Dependency
@@ -10,19 +10,24 @@ import * as speech from '@tensorflow-models/speech-commands';
 // draw Ball
 import {drawBall} from "./utilities.js";
 
-//create canvas
-const canvasRef = useRef(null);
-const [x, setX] = useState(300);
-const [y, setY] = useState(300);
-const [r, setR] = useState(10);
+
 
 
 function App() {
+  
 
   //>create model and action states
   const [model,setModel] = useState(null)
   const [action,setAction] = useState(null)
   const [labels,setLabels]= useState(null)
+  //create canvas
+
+  const canvasRef = useRef(null);
+  const [x, setX] = useState(300);
+  const [y, setY] = useState(300);
+  const [r, setR] = useState(10);
+
+
   //>create recognizerr
 
   const loadModel = async() =>{
@@ -50,8 +55,43 @@ function App() {
     },{includeSpectrogram:true,probabilityThreshold: 0.9})
     setTimeout(()=>model.stopListening(),10e3)
   } 
+  
+  //update ball state
+  const numberMap ={
+    "zero" : 0,
+    "one" : 1,
+    "two" : 2,
+    "three" : 3,
+    "four" : 4,
+    "five" : 5,
+    "six" : 6,
+    "seven" : 7,
+    "eight" : 8,
+    "nine" : 9
+  }
+
+  
 
 
+  useEffect(()=>{
+    const update = action === "up" 
+                            ? setY(y-50)
+                            :action === "down"
+                            ? setX(y+50)
+                            : action ==="left"
+                            ? setX(x-50)
+                            : action === "right"
+                            ? setX(x+50)
+                            :"";
+
+
+    canvasRef.current.width = 600;
+    canvasRef.current.height = 600;
+    const ctx = canvasRef.current.getContext('2d');
+    console.log(x,y,r);
+    drawBall(ctx,x,y,r);
+
+  },[action])
 
 
   return (
