@@ -90,6 +90,7 @@ function App() {
     const ctx = canvasRef.current.getContext('2d');
     console.log(x,y,r);
     drawBall(ctx,x,y,r);
+    setAction('base');
 
   },[action])
 
