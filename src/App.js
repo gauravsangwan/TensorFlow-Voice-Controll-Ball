@@ -53,7 +53,7 @@ function App() {
       setAction(labels[argMax(Object.values(result.scores))])
       console.log(action)
     },{includeSpectrogram:true,probabilityThreshold: 0.9})
-    setTimeout(()=>model.stopListening(),10e3)
+    //setTimeout(()=>model.stopListening(),10e3)
   } 
   
   //update ball state
@@ -83,6 +83,11 @@ function App() {
                             : action === "right"
                             ? setX(x+50)
                             :"";
+
+    //update r
+    if(Object.keys(numberMap).includes(action)){
+      setR(10*numberMap[action])
+    }
 
 
     canvasRef.current.width = 600;

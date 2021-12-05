@@ -29,4 +29,6 @@
 
 
 ### Probability Threshhold Selected : 0.9
-### Model Listens for 10e3 and then stops
+### Model Listens for 10e3 and then stops but I commented that out so that we can keep playing as much as we want
+
+### ball can be resized by saying number
