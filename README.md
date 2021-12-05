@@ -2,7 +2,10 @@
 - Setup Canvas - Done
 - Create Canvas ref and x,y,r -Done
 - Update Ball state - Done
+# Screenshot of working App
 
+
+![alt text](https://github.com/gauravsangwan/Tensorflow-Voice-Controll-Ball/blob/master/voiceControlledBall.png?raw=true)
 
 # Model Can recognize these commands
 
