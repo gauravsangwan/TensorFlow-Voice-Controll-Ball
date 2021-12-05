@@ -1,4 +1,4 @@
-import React,{useEffect, useState} from "react"; 
+import React,{useEffect, useState,useRef} from "react"; 
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,8 +10,11 @@ import * as speech from '@tensorflow-models/speech-commands';
 // draw Ball
 import {drawBall} from "./utilities.js";
 
-
-
+//create canvas
+const canvasRef = useRef(null);
+const [x, setX] = useState(300);
+const [y, setY] = useState(300);
+const [r, setR] = useState(10);
 
 
 function App() {
@@ -55,7 +58,20 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1> Voice-Control-Move-Ball | Gaurav Sangwan</h1>
-        <p>This ReactJS application can convert following sounds to text , zero to nine and go,stop,up,down,left,right,yes,no and two more possibilities of Unknown noises and background noise.   </p>
+        <p> Use your voice to move the ball </p>
+        <canvas
+        ref = {canvasRef}
+        style = {{
+          marginLeft: "auto",
+          marginRight: "auto",
+          left: 0,
+          right: 0,
+          textAlign: "center",
+          zindex : 9,
+          width : 640,
+          height : 640
+        }} />
+
 
 
         <button onClick={recognizeCommands} >Command Input</button>

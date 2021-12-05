@@ -1,6 +1,6 @@
 - Draw Ball - Done
-- Setup Canvas
-- Create Canvas ref and x,y,r
+- Setup Canvas - Done
+- Create Canvas ref and x,y,r -Done
 - Update Ball state
 
 
